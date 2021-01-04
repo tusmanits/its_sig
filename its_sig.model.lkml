@@ -20,7 +20,7 @@ explore: order_items {
   join: inventory_items {
     #Left Join only brings in items that have been sold as order_item
     type: full_outer
-    relationship: one_to_one
+    relationship: many_to_one
     sql_on: ${inventory_items.id} = ${order_items.inventory_item_id} ;;
   }
 
