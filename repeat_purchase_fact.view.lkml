@@ -32,6 +32,16 @@ view: repeat_purchase_facts {
     sql: ${next_order_id} > 0 ;;
   }
 
+  dimension: has_subsequent_order_child1 {
+    type: yesno
+    sql: ${has_subsequent_order} > 0 ;;
+  }
+
+  dimension: has_subsequent_order_child2 {
+    type: yesno
+    sql: ${has_subsequent_order_child1} > 0 ;;
+  }
+
   dimension: number_subsequent_orders {
     type: number
     sql: ${TABLE}.number_subsequent_orders ;;
