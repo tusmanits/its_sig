@@ -32,19 +32,19 @@ view: repeat_purchase_facts {
     sql: ${next_order_id} > 0 ;;
   }
 
-  dimension: has_subsequent_order_child1 {
-    type: yesno
-    sql: ${has_subsequent_order} > 0 ;;
+  dimension: less_than_10 {
+    type:  yesno
+    sql:  ${number_subsequent_orders} >= 1 AND ${number_subsequent_orders} <= 10 ;;
   }
 
-  dimension: has_subsequent_order_child2 {
-    type: yesno
-    sql: ${has_subsequent_order_child1} > 0 ;;
+  dimension: less_than_20 {
+    type:  yesno
+    sql:  NOT ${less_than_10} AND ${number_subsequent_orders} <= 20 ;;
   }
 
-  dimension: has_subsequent_order_child3 {
-    type: yesno
-    sql: ${has_subsequent_order_child1} AND ${has_subsequent_order_child2} > 0 ;;
+  dimension: less_than_30 {
+    type:  yesno
+    sql:  NOT ${less_than_20} AND ${number_subsequent_orders} <= 30 ;;
   }
 
   dimension: number_subsequent_orders {
