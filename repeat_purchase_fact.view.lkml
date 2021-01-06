@@ -27,6 +27,11 @@ view: repeat_purchase_facts {
     sql: ${TABLE}.next_order_id ;;
   }
 
+  dimension: less_than_40 {
+    type:  yesno
+    sql:  NOT ${less_than_30} AND ${number_subsequent_orders} <= 30 ;;
+  }
+
   dimension: has_subsequent_order {
     type: yesno
     sql: ${next_order_id} > 0 ;;
