@@ -4,7 +4,7 @@ view: clean_events {
       SELECT *
       FROM events
       WHERE type NOT IN ('test', 'staff') ;;
-    sql_trigger_value: SELECT CURDATE() ;;
+    sql_trigger_value: SELECT CURRENT_DATE() ;;
   }
 }
 
