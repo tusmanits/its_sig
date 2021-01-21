@@ -13,7 +13,7 @@ view: events_summary {
     sql:
       SELECT
         EVENT_TYPE,
-        created_at::date,
+        created_at::date as date,
         COUNT(*) AS num_events
       FROM
         ${clean_events.SQL_TABLE_NAME} AS clean_events
