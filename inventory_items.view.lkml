@@ -16,7 +16,7 @@ view: inventory_items {
 
   dimension_group: created {
     type: time
-    timeframes: [time, date, week, month, raw]
+    timeframes: [yesno, raw,time,time_of_day,hour,hour_of_day,hour2,minute,minute10,second,millisecond,millisecond10,microsecond,date,week,day_of_week,day_of_week_index,month,month_num,fiscal_month_num,month_name,day_of_month,quarter,fiscal_quarter,quarter_of_year,fiscal_quarter_of_year,year,fiscal_year,day_of_year,week_of_year]
     sql: ${TABLE}.created_at ;;
   }
 
