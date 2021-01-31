@@ -28,7 +28,7 @@ view: users {
     sql: ${TABLE}.age ;;
   }
 
-  dimension: age_tier {
+  dimension: age_tier_integer {
     type: tier
     tiers: [0, 10, 20, 30, 40, 50, 60, 70, 80]
     style: integer
@@ -39,6 +39,20 @@ view: users {
     type: tier
     tiers: [0, 10, 20, 30, 40, 50, 60, 70 ,80]
     style: classic
+    sql: ${age} ;;
+  }
+
+  dimension: age_tier_interval {
+    type: tier
+    tiers: [0, 10, 20, 30, 40, 50, 60, 70, 80]
+    style: interval
+    sql: ${age} ;;
+  }
+
+  dimension: age_tier_relational {
+    type: tier
+    tiers: [0, 10, 20, 30, 40, 50, 60, 70, 80]
+    style: relational
     sql: ${age} ;;
   }
 
