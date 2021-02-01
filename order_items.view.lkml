@@ -19,7 +19,12 @@ view: order_items {
     hidden: yes
     sql: ${TABLE}.user_id ;;
   }
-
+  dimension_group: to_delivery {
+    type: duration
+    intervals: [day, hour]
+    sql_start: ${created_raw} ;;
+    sql_end: ${delivered_raw};;
+  }
   measure: count {
     type: count_distinct
     sql: ${id} ;;
