@@ -21,7 +21,7 @@ view: order_items {
   }
   dimension_group: to_delivery {
     type: duration
-    intervals: [day, hour]
+    intervals: [day, hour ,minute,month,quarter,second,week,year]
     sql_start: ${created_raw} ;;
     sql_end: ${delivered_raw};;
   }
