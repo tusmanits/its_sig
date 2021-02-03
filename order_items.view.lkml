@@ -25,6 +25,7 @@ view: order_items {
     sql_start: ${created_raw} ;;
     sql_end: ${delivered_raw};;
   }
+
   measure: count {
     type: count_distinct
     sql: ${id} ;;

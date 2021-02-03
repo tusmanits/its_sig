@@ -22,7 +22,12 @@ view: users {
   dimension: name {
     sql: ${first_name} || ' ' || ${last_name} ;;
   }
-
+  dimension: distance_to_pickup {
+    type: distance
+    start_location_field: approx_location
+    end_location_field: location
+    units: miles
+  }
   dimension: age {
     type: number
     sql: ${TABLE}.age ;;
