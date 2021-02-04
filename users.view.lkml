@@ -28,6 +28,36 @@ view: users {
     end_location_field: location
     units: miles
   }
+  dimension: distance_to_pickup_meters {
+    type: distance
+    start_location_field: approx_location
+    end_location_field: location
+    units: meters
+  }
+  dimension: distance_to_pickup_feet {
+    type: distance
+    start_location_field: approx_location
+    end_location_field: location
+    units: feet
+  }
+  dimension: distance_to_pickup_kilometers {
+    type: distance
+    start_location_field: approx_location
+    end_location_field: location
+    units: kilometers
+  }
+  dimension: distance_to_pickup_nautical_miles {
+    type: distance
+    start_location_field: approx_location
+    end_location_field: location
+    units: nautical_miles
+  }
+  dimension: distance_to_pickup_yards {
+    type: distance
+    start_location_field: approx_location
+    end_location_field: location
+    units: yards
+  }
   dimension: age {
     type: number
     sql: ${TABLE}.age ;;
